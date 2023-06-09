@@ -1,0 +1,18 @@
+[tool.poetry]
+name = "scraping-hub"
+version = "0.1.0"
+description = "A collection useful operations for collecting or processing data."
+authors = ["erinhmclark"]
+readme = "README.md"
+packages = [{include = "scraping_hub"}]
+
+[tool.poetry.dependencies]
+python = "^3.11"
+requests = "^2.31.0"
+selenium = "^4.10.0"
+bs4 = "^0.0.1"
+
+
+[build-system]
+requires = ["poetry-core"]
+build-backend = "poetry.core.masonry.api"
