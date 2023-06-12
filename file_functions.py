@@ -1,5 +1,6 @@
 """ A collection of useful operations to read or write files """
 import pickle
+import csv
 
 
 def pickle_in_and_out(func):
@@ -20,3 +21,10 @@ def pickle_in_and_out(func):
         return value
 
     return pickle_bits
+
+
+def insert_dict_to_csv(course_dict, csv_file_path):
+    # add title if not already there
+    with open(csv_file_path, 'a') as csv_file_object:
+        writer = csv.DictWriter(csv_file_object, fieldnames=course_dict.keys())
+        writer.writerow(course_dict)
