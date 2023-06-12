@@ -12,6 +12,8 @@ requests = "^2.31.0"
 selenium = "^4.10.0"
 bs4 = "^0.0.1"
 pypdf2 = "^3.0.1"
+pandas = "^2.0.2"
+gspread = "^5.9.0"
 
 
 [build-system]
