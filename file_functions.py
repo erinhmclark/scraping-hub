@@ -1,6 +1,19 @@
 """ A collection of useful operations to read or write files """
 import pickle
 import csv
+import os
+from PIL import Image
+
+
+def compress_image(filepath, quality=85):
+    """ Compress an image file. """
+    img = Image.open(filepath)
+
+    base_name, ext = os.path.splitext(filepath)
+    new_filename = base_name + "_compressed" + ext
+
+    img.save(new_filename, quality=quality)
+    print(f"Compressed image is saved as {new_filename}")
 
 
 def pickle_in_and_out(func):
@@ -28,3 +41,4 @@ def insert_dict_to_csv(course_dict, csv_file_path):
     with open(csv_file_path, 'a') as csv_file_object:
         writer = csv.DictWriter(csv_file_object, fieldnames=course_dict.keys())
         writer.writerow(course_dict)
+
